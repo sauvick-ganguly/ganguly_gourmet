@@ -163,11 +163,9 @@
 
 @media (max-width: 768px) {
   #story {
+    padding: 40px 0;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    padding-top: 20px; /* reduce from the current large value */
+    background-position: center center;
   }
 
   .story-grid {
@@ -180,7 +178,7 @@
   }
 
   .story {
+    padding-top: 0;
     margin-top: 0;
-    padding-top: 20px;
   }
 }
