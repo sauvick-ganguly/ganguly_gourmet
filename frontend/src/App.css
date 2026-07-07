@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700&family=Manrope:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600&display=swap");
+
+:root {
+  --ink: #0e2323;
+  --ink-2: #133030;
+  --ink-3: #1a3d3d;
+  --gold: #d9a441;
+  --gold-soft: #e8c377;
+  --vermillion: #b23a2e;
+  --cream: #f3ead4;
+  --cream-dim: #cfc4a6;
+  --brass: #8c7a54;
+  --line: rgba(243,234,212,0.14);
+  --shadow: 0 20px 50px rgba(0,0,0,0.35);
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: "Manrope", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fraunces", serif;
+}
+
+.bn {
+  font-family: "Noto Sans Bengali", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+section {
+  position: relative;
+  padding: 130px 0;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-soft);
+  outline-offset: 3px;
+}
+
+.section-alt {
+  background: var(--ink-2);
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-soft);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold-soft);
+  display: inline-block;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeDot {
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 768px) {
+  .reservation-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reservation-form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-form input,
+  .reservation-form select,
+  .reservation-form textarea,
+  .reservation-form button {
+    width: 100%;
+  }
+}

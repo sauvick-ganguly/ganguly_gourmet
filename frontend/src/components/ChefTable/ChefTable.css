@@ -1,0 +1,81 @@
+  .spotlight{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items:center;
+    background: linear-gradient(155deg, #1a3d3d, #0e2323);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 70px;
+    margin-top: 40px;
+  }
+  .spotlight-visual{
+    aspect-ratio: 1/1;
+    border-radius: 18px;
+    position:relative;
+    background: radial-gradient(circle at 60% 30%, rgba(178,58,46,0.35), transparent 60%), #102b2b;
+    display:flex; align-items:center; justify-content:center;
+    border: 1px solid var(--line);
+  }
+  .spotlight-visual svg{ width: 60%; }
+  .spotlight h3{ font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 18px; }
+  .spotlight p{ color: var(--cream-dim); margin-bottom: 24px; }
+  .spotlight .price-tag{
+    font-family:'Fraunces', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+  }
+/* Spotlight Responsive */
+@media (max-width: 768px) {
+
+  .spotlight{
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 35px 20px;
+    text-align: center;
+  }
+
+  .spotlight-visual{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .spotlight-visual svg{
+    width: 50%;
+  }
+
+  .spotlight h3{
+    font-size: 2rem;
+  }
+
+  .spotlight p{
+    font-size: 0.95rem;
+  }
+
+  .spotlight .price-tag{
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .spotlight{
+    padding: 25px 15px;
+    gap: 25px;
+  }
+
+  .spotlight-visual{
+    max-width: 280px;
+  }
+
+  .spotlight h3{
+    font-size: 1.7rem;
+  }
+
+  .spotlight p{
+    font-size: 0.9rem;
+  }
+
+}

@@ -1,0 +1,126 @@
+ .story-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items:center;
+  }
+  .story-visual{
+    position:relative;
+    aspect-ratio: 4/5;
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(217,164,65,0.25), transparent 55%),
+      linear-gradient(155deg, #1c4444, #0e2323 70%);
+    border: 1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+  }
+  .story-visual svg{ width: 72%; }
+  .story h2{ font-size: clamp(2.1rem, 4vw, 3rem); margin-bottom: 26px; }
+  .story p{ color: var(--cream-dim); margin-bottom: 18px; max-width: 52ch; }
+  .story .signed{
+    margin-top: 28px;
+    font-family:'Fraunces', serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-size: 1.2rem;
+  }
+  .stat-row{
+    display:flex;
+    gap: 46px;
+    margin-top: 42px;
+    flex-wrap: wrap;
+  }
+  .stat-row div strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--gold);
+  }
+  .stat-row div span{
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cream-dim);
+  }
+/* Story Responsive */
+@media (max-width: 768px) {
+
+  .story-grid{
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story{
+    text-align: center;
+  }
+
+  .story-visual{
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .story-visual svg{
+    width: 65%;
+  }
+
+  .story h2{
+    font-size: 2rem;
+  }
+
+  .story p{
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .stat-row{
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .stat-row div{
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .story-grid{
+    gap: 30px;
+  }
+
+  .story-visual{
+    max-width: 300px;
+  }
+
+  .story h2{
+    font-size: 1.8rem;
+  }
+
+  .story p{
+    font-size: 0.9rem;
+  }
+
+  .story .signed{
+    font-size: 1rem;
+  }
+
+  .stat-row{
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .stat-row div strong{
+    font-size: 1.7rem;
+  }
+
+  .stat-row div span{
+    font-size: 0.72rem;
+  }
+
+}

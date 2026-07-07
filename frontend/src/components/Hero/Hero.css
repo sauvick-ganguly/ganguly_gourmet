@@ -1,0 +1,287 @@
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 24px 100px;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(217, 164, 65, 0.14), transparent 55%),
+      linear-gradient(180deg, var(--ink) 0%, #0b1c1c 100%);
+    overflow: hidden;
+  }
+
+  .alpona-field {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .alpona-field svg {
+    width: min(820px, 100vw);
+    height: auto;
+  }
+
+  .alpona-stroke {
+    fill: none;
+    stroke: var(--gold-soft);
+    stroke-width: 1.1;
+    stroke-linecap: round;
+    stroke-dasharray: 260;
+    stroke-dashoffset: 260;
+    animation: draw 2.6s var(--ease) forwards;
+  }
+
+  .alpona-dot {
+    fill: var(--vermillion);
+    opacity: 0;
+    animation: fadeDot .6s var(--ease) forwards;
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes fadeDot {
+    to {
+      opacity: 0.9;
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .hero .bn-line {
+    font-size: 1rem;
+    color: var(--gold-soft);
+    letter-spacing: 0.04em;
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: rise .9s var(--ease) forwards;
+    animation-delay: .15s;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 6.4rem);
+    line-height: 0.98;
+    font-weight: 600;
+    color: var(--cream);
+    opacity: 0;
+    animation: rise 1s var(--ease) forwards;
+    animation-delay: .3s;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .hero p.sub {
+    margin: 26px auto 0;
+    max-width: 520px;
+    color: var(--cream-dim);
+    font-size: 1.08rem;
+    opacity: 0;
+    animation: rise 1s var(--ease) forwards;
+    animation-delay: .5s;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .hero-ctas {
+    margin-top: 42px;
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: rise 1s var(--ease) forwards;
+    animation-delay: .68s;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s, color .25s, border-color .25s;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(217, 164, 65, 0.35);
+    background: var(--gold-soft);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border-color: var(--line);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold-soft);
+    color: var(--gold-soft);
+    transform: translateY(-2px);
+  }
+
+  /* marquee */
+  .marquee{
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--ink);
+}
+
+  .marquee-track {
+    display: inline-flex;
+    animation: scroll-left 32s linear infinite;
+  }
+
+  .marquee span {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--cream-dim);
+    padding: 0 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .marquee span::after {
+    content: "✦";
+    color: var(--vermillion);
+    font-style: normal;
+    font-size: 0.7rem;
+  }
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Hero Responsive */
+  @media (max-width: 768px) {
+    
+
+    .hero {
+      min-height: auto;
+      padding: 120px 20px 80px;
+    }
+
+    .hero-content {
+      max-width: 100%;
+    }
+
+    .hero .bn-line {
+      font-size: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 10vw, 4rem);
+      line-height: 1.1;
+    }
+
+    .hero p.sub {
+      font-size: 1rem;
+      max-width: 100%;
+    }
+
+    .hero-ctas {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+    }
+
+    .marquee {
+      margin-top: 60px;
+      padding: 12px 0;
+    }
+
+    .marquee span {
+      font-size: 1rem;
+      padding: 0 18px;
+      gap: 18px;
+    }
+
+    .alpona-field svg {
+      width: 95%;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .hero {
+      padding: 100px 16px 60px;
+    }
+
+    .hero .bn-line {
+      font-size: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero p.sub {
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+    }
+
+    .marquee span {
+      font-size: 0.9rem;
+    }
+
+  }
