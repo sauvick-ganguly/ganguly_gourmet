@@ -160,3 +160,27 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  #story {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding-top: 20px; /* reduce from the current large value */
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .story-visual {
+    display: none;
+  }
+
+  .story {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+}
