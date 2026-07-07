@@ -39,7 +39,7 @@ function Reservation() {
     }
 
     try {
-      await API.post("/reservations", form);
+      await API.post("/api/reservations", form);
 
       setSubmitted(true);
 
