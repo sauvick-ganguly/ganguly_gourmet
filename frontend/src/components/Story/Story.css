@@ -151,3 +151,12 @@
   z-index: 1;
 }
 
+@media (max-width: 768px) {
+  .story-visual {
+    display: none;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}
