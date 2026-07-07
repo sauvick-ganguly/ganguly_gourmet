@@ -17,7 +17,6 @@ const createReservation = async (req, res) => {
     });
   }
 };
-
 // Get All Reservations
 const getReservations = async (req, res) => {
   try {
@@ -42,7 +41,6 @@ const getReservations = async (req, res) => {
 const getReservationById = async (req, res) => {
   try {
     const reservation = await Reservation.findById(req.params.id);
-
     if (!reservation) {
       return res.status(404).json({
         success: false,

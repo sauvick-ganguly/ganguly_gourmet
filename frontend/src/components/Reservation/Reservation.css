@@ -240,5 +240,48 @@
     padding: 14px;
     font-size: 0.9rem;
   }
+}
+.check-reservation button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px 20px;
 
+  background: var(--gold);
+  color: #102221;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.check-reservation button:hover {
+  background: #e8c377;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(232, 195, 119, 0.25);
+}
+.check-reservation button:active {
+  transform: scale(0.98);
+}
+.check-reservation input {
+  width: 100%;
+  padding: 14px 18px;
+
+  background: rgba(255,255,255,0.05);
+  color: var(--cream);
+
+  border: 1px solid var(--line);
+  border-radius: 12px;
+
+  outline: none;
+  transition: 0.3s;
+}
+
+.check-reservation input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 10px rgba(232,195,119,0.2);
 }

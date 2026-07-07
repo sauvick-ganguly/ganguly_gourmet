@@ -15,6 +15,8 @@ function Reservation() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [reservationId, setReservationId] = useState("");
+  const [reservationData, setReservationData] = useState(null);
 
   const handleChange = (e) => {
     setForm({
@@ -39,9 +41,12 @@ function Reservation() {
     }
 
     try {
-      await API.post("/api/reservations", form);
+      const res = await API.post("/api/reservations", form);
 
       setSubmitted(true);
+
+      // Save the newly created reservation
+      setReservationData(res.data.reservation);
 
       setForm({
         name: "",
@@ -60,6 +65,19 @@ function Reservation() {
       alert(error.response?.data?.message || error.message);
     }
   };
+  const handleCheckReservation = async () => {
+    try {
+      const res = await API.get(`/api/reservations/${reservationId}`);
+
+      setReservationData(res.data.reservation);
+
+    } catch (error) {
+      alert("Reservation not found.");
+
+      setReservationData(null);
+    }
+  };
+
 
   return (
     <section id="reserve" className="section-alt">
@@ -202,18 +220,68 @@ function Reservation() {
               Confirm Reservation
             </button>
 
-            {submitted && (
+            {submitted && reservationData && (
               <div className="form-msg show">
-                Reservation request submitted successfully.
+                <p>✅ Reservation request submitted successfully.</p>
+
+                <p>
+                  <strong>Your Reservation ID:</strong>
+                  <br />
+                  {reservationData._id}
+                </p>
               </div>
             )}
+            <hr />
 
+            <div className="check-reservation">
+
+              <h3>Check Your Reservation</h3>
+
+              <input
+                type="text"
+                placeholder="Enter Reservation ID"
+                value={reservationId}
+                onChange={(e) => setReservationId(e.target.value)}
+              />
+
+              <button
+                type="button"
+                onClick={handleCheckReservation}
+              >
+                Check Reservation
+              </button>
+
+            </div>
+            {reservationData && (
+              <div className="reservation-card">
+
+                <h4>Reservation Details</h4>
+
+                <p><strong>Name:</strong> {reservationData.name}</p>
+
+                <p><strong>Date:</strong> {reservationData.date}</p>
+
+                <p><strong>Time:</strong> {reservationData.time}</p>
+
+                <p><strong>Guests:</strong> {reservationData.guests}</p>
+
+                <p><strong>Phone:</strong> {reservationData.phone}</p>
+
+                <p><strong>Email:</strong> {reservationData.email}</p>
+
+                {reservationData.note && (
+                  <p><strong>Special Request:</strong> {reservationData.note}</p>
+                )}
+
+              </div>
+            )}
           </form>
 
         </div>
       </div>
     </section>
   );
+
 }
 
 export default Reservation;
