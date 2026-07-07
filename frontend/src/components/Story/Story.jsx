@@ -1,11 +1,17 @@
 import "./Story.css";
 import useReveal from "../../hooks/useReveal";
+import storyImage from "../../assets/HooghlyBridge.jpg";
 
 
 function Story() {
   useReveal();
   return (
-    <section id="story">
+    <section
+      id="story"
+      style={{
+        backgroundImage: `url(${storyImage})`,
+      }}
+    >
       <div className="wrap story-grid">
         <div className="story-visual reveal">
           <svg viewBox="0 0 200 200" fill="none">

@@ -1,6 +1,6 @@
 import "./Ambience.css";
 import useReveal from "../../hooks/useReveal";
-
+import restaurantImage from "../../assets/restaurant.jpg";
 
 function Ambience() {
   return (
@@ -20,14 +20,11 @@ function Ambience() {
         <div className="ambience-grid reveal">
 
           <div className="tile t1 wide">
-            <svg viewBox="0 0 100 100">
-              <path
-                d="M50 15 L60 40 L85 40 L65 55 L72 80 L50 65 L28 80 L35 55 L15 40 L40 40 Z"
-                stroke="#e8c377"
-                strokeWidth="1"
-                fill="none"
-              />
-            </svg>
+            <img
+              src={restaurantImage}
+              alt="Restaurant Interior"
+              className="ambience-image"
+            />
           </div>
 
           <div className="tile t2">

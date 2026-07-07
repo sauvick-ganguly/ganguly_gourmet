@@ -124,3 +124,30 @@
   }
 
 }
+#story {
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 140%;
+
+  padding: 120px 0;
+}
+
+#story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 20, 18, 0.65);
+  backdrop-filter: blur(4px);
+
+  z-index: 0;
+}
+.story-grid {
+  position: relative;
+  z-index: 1;
+}
+
